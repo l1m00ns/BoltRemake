@@ -117,31 +117,40 @@ export default function App() {
     <div className="min-h-dvh bg-ink">
       <header
         className={cn(
-          "sticky top-0 z-40 flex h-[56px] items-center border-b border-white/[0.05] bg-[#171719]/95 backdrop-blur-xl",
-          view === "home" ? "px-4 sm:px-6" : "px-3 sm:px-4",
+          "relative sticky top-0 z-40 bg-[#111114]",
+          view === "home" ? "h-[68px]" : "h-[56px]",
         )}
       >
+        <div
+          className={cn(
+            "mx-auto flex h-full w-full items-center",
+            view === "home" ? "max-w-[1248px] px-6" : "px-3 sm:px-4",
+          )}
+        >
         <button onClick={newChat} className="focus-ring rounded-lg" aria-label="Bolt home">
           <Wordmark />
         </button>
 
         {view === "home" ? (
           <>
-            <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex">
+            <nav className="absolute left-[calc(50%-2px)] hidden -translate-x-1/2 items-center gap-1 md:flex">
               {NAV.map((item) => (
                 <button
                   key={item}
                   onClick={() => showToast(`${item} — demo only`)}
-                  className="rounded-lg px-3 py-1.5 text-[13px] text-white/50 transition hover:bg-white/[0.05] hover:text-white/90"
+                  className="flex items-center gap-1 rounded px-3.5 py-2 text-[14px] font-medium text-white/75 transition hover:bg-white/[0.05] hover:text-white/90"
                 >
                   {item}
+                  {(item === "Solutions" || item === "Resources") && (
+                    <ChevronDown className="size-3 text-white/45" strokeWidth={2} />
+                  )}
                 </button>
               ))}
             </nav>
-            <div className="ml-auto flex items-center gap-2">
+            <div className="ml-auto flex items-center gap-4">
               <button
                 onClick={() => showToast("Sign in — demo only")}
-                className="hidden rounded-lg px-3 py-1.5 text-[13px] text-white/55 transition hover:bg-white/[0.05] hover:text-white sm:block"
+                className="hidden text-[14px] font-medium text-white/75 transition hover:text-white sm:block"
               >
                 Sign in
               </button>
@@ -150,9 +159,9 @@ export default function App() {
                   document.getElementById("hero-prompt")?.scrollIntoView({ behavior: "smooth", block: "center" });
                   window.setTimeout(() => document.getElementById("hero-prompt")?.focus(), 350);
                 }}
-                className="flex h-8 items-center gap-1.5 rounded-lg bg-[#2f6bff] px-3 text-[12.5px] font-semibold text-white transition hover:bg-[#4a7fff]"
+                className="flex h-9 items-center rounded-md bg-[#1488fc] px-[13px] text-[14px] font-medium text-[#f9f6f9] transition hover:bg-[#3d9bff]"
               >
-                Get started <ArrowRight className="size-3.5" />
+                Get Started
               </button>
               <button
                 onClick={() => setMobileNav((v) => !v)}
@@ -163,7 +172,7 @@ export default function App() {
               </button>
             </div>
             {mobileNav && (
-              <div className="absolute inset-x-0 top-[52px] border-b border-white/10 bg-[#0c0c0f] p-2 md:hidden">
+              <div className="absolute inset-x-0 top-[68px] border-b border-white/10 bg-[#0c0c0f] p-2 md:hidden">
                 {NAV.map((item) => (
                   <button
                     key={item}
@@ -281,6 +290,7 @@ export default function App() {
             </div>
           </>
         )}
+        </div>
       </header>
 
       {view === "home" ? (

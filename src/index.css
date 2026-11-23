@@ -114,6 +114,32 @@ a {
   mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 10%, transparent 75%);
 }
 
+.bolt-hero-fog {
+  background-color: #111114;
+  -webkit-mask-image: url("/bolt-hero-fog-mask.png");
+  mask-image: url("/bolt-hero-fog-mask.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.bolt-hero {
+  height: calc(100dvh - 52px);
+  min-height: 640px;
+  border-radius: 16px 16px 0 0;
+  border-bottom: 0;
+}
+
+.bolt-hero-bg {
+  background-image: url("/bolt-hero-gradient02.webp");
+  background-size: 100% 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(rgb(0, 0, 0) calc(100% - 200px), rgba(0, 0, 0, 0.976) calc(100% - 180px), rgba(0, 0, 0, 0.925) calc(100% - 160px), rgba(0, 0, 0, 0.855) calc(100% - 140px), rgba(0, 0, 0, 0.77) calc(100% - 120px), rgba(0, 0, 0, 0.67) calc(100% - 100px), rgba(0, 0, 0, 0.557) calc(100% - 80px), rgba(0, 0, 0, 0.435) calc(100% - 60px), rgba(0, 0, 0, 0.3) calc(100% - 40px), rgba(0, 0, 0, 0.157) calc(100% - 20px), rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(rgb(0, 0, 0) calc(100% - 200px), rgba(0, 0, 0, 0.976) calc(100% - 180px), rgba(0, 0, 0, 0.925) calc(100% - 160px), rgba(0, 0, 0, 0.855) calc(100% - 140px), rgba(0, 0, 0, 0.77) calc(100% - 120px), rgba(0, 0, 0, 0.67) calc(100% - 100px), rgba(0, 0, 0, 0.557) calc(100% - 80px), rgba(0, 0, 0, 0.435) calc(100% - 60px), rgba(0, 0, 0, 0.3) calc(100% - 40px), rgba(0, 0, 0, 0.157) calc(100% - 20px), rgba(0, 0, 0, 0) 100%);
+}
+
 .hero-grid {
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),

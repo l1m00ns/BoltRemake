@@ -5,25 +5,39 @@ import {
   ArrowUp,
   BarChart3,
   Check,
-  ChevronDown,
   Command,
   Database,
   FlaskConical,
   GitBranch,
   Globe2,
   LayoutTemplate,
+  Lightbulb,
   Mic,
   Monitor,
   PenTool,
   Plus,
   Presentation,
   ShieldCheck,
-  Sparkles,
-  Users,
   Wand2,
   Zap,
 } from "lucide-react";
 import { cn } from "./ui";
+
+function FigmaMark({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.043 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z" />
+    </svg>
+  );
+}
+
+function GitHubMark({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </svg>
+  );
+}
 
 const NAV_MODELS = ["Bolt Agent", "Claude Sonnet 4.5", "GPT-5.2", "Gemini 3 Pro"];
 
@@ -132,25 +146,22 @@ export default function Home({
   }
 
   return (
-    <div className="min-h-screen bg-[#171719] text-white">
+    <div className="min-h-screen bg-[#111114] text-white">
       {/* hero panel */}
-      <section className="relative mx-2.5 mt-2.5 flex min-h-[calc(100dvh-80px)] flex-col overflow-hidden rounded-[18px] border border-white/[0.07] bg-[#06070d] sm:mx-3 sm:mt-3">
+      <section className="bolt-hero relative mx-4 flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-[#111114]">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-[24%] h-[820px] w-[1180px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(27,61,255,0.92),rgba(24,48,210,0.55)_38%,rgba(9,14,60,0.35)_68%,transparent)] blur-[10px]" />
-          <div className="absolute left-1/2 top-[16%] h-[440px] w-[760px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(44,86,255,0.55),transparent)] blur-3xl" />
-          <div className="absolute -left-24 bottom-0 h-[420px] w-[620px] rounded-full bg-[radial-gradient(closest-side,rgba(15,164,175,0.38),transparent)] blur-3xl" />
-          <div className="absolute -right-20 top-24 h-[420px] w-[520px] rounded-full bg-[radial-gradient(closest-side,rgba(87,45,255,0.32),transparent)] blur-3xl" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_60%_at_50%_45%,transparent_20%,rgba(4,5,10,0.4)_78%,#06070d_100%)]" />
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-          <div className="hero-grid absolute inset-0 opacity-[0.18]" />
+          <div className="bolt-hero-bg absolute inset-0" />
+          <div className="bolt-hero-fog absolute inset-0" />
+          <div className="hero-grid absolute inset-0 opacity-[0.08]" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-center px-5 py-14 text-center sm:py-16">
+        <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-start px-5 pb-0 pt-[235px] text-center">
           <motion.h1
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
-            className="max-w-4xl text-[38px] font-semibold leading-[1.04] tracking-[-0.045em] sm:text-[52px] md:text-[58px]"
+            className="mb-4 max-w-4xl text-[38px] font-semibold leading-[1.04] tracking-[-0.025em] text-[#f9f6f9] sm:text-[48px] sm:leading-[1.2]"
           >
             What will you build today?
           </motion.h1>
@@ -158,7 +169,7 @@ export default function Home({
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08 }}
-            className="mt-4 text-[15px] font-medium text-white/85 sm:text-[18px]"
+            className="mb-8 text-[15px] font-medium leading-[1.2] text-[#cfcfd7] sm:text-[18px] sm:leading-[28px]"
           >
             Create stunning apps &amp; websites by chatting with AI.
           </motion.p>
@@ -167,14 +178,14 @@ export default function Home({
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.14 }}
-            className="mt-9 w-full max-w-[632px]"
+            className="w-full max-w-[638px]"
           >
             <form
               onSubmit={(e) => {
                 e.preventDefault();
                 submit();
               }}
-              className="group relative rounded-2xl border border-white/10 bg-[#17171b]/85 p-3 text-left shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)] backdrop-blur-xl transition-colors focus-within:border-white/25"
+              className="group relative rounded-[14px] border border-white/[0.09] bg-[#1e1e21] p-[10px] text-left shadow-[0_16px_44px_-26px_rgba(0,0,0,0.55)] transition-colors focus-within:border-white/25"
             >
               <textarea
                 ref={taRef}
@@ -189,7 +200,7 @@ export default function Home({
                 }}
                 rows={2}
                 placeholder={PLACEHOLDERS[placeholder]}
-                className="scrollbar-thin block min-h-[64px] w-full resize-none bg-transparent px-2 pt-1.5 text-[15px] leading-relaxed text-white placeholder:text-white/40 focus:outline-none"
+                className="scrollbar-thin block min-h-[74px] w-full resize-none bg-transparent px-2.5 pt-2 text-[15px] leading-relaxed text-white placeholder:text-white/40 focus:outline-none"
               />
 
               <div className="mt-2 flex items-center gap-1.5">
@@ -233,6 +244,7 @@ export default function Home({
                   )}
                 </div>
 
+                <div className="ml-auto flex items-center gap-2">
                 <div className="relative">
                   <button
                     type="button"
@@ -241,11 +253,10 @@ export default function Home({
                       setModelOpen((v) => !v);
                       setImportOpen(false);
                     }}
-                    className="flex h-8 items-center gap-1.5 rounded-full px-2.5 text-[12px] text-white/60 transition hover:bg-white/[0.06] hover:text-white"
+                    className="flex h-8 items-center gap-1 rounded-full px-3 text-[12px] text-[#a4a3ac] transition hover:bg-white/[0.06] hover:text-white"
                   >
-                    <Sparkles className="size-3.5 text-indigo-300" />
+                    <Lightbulb className="size-4 text-[#a4a3ac]" />
                     Plan
-                    <ChevronDown className="size-3 text-white/35" />
                   </button>
                   {modelOpen && (
                     <div
@@ -279,21 +290,19 @@ export default function Home({
                   <Mic className="size-4" />
                 </button>
 
-                <div className="ml-auto flex items-center gap-2">
-                  <span className="hidden text-[11px] text-white/30 sm:block">↵ to build</span>
                   <button
                     type="submit"
                     disabled={!value.trim()}
-                    className="flex h-8 items-center gap-1.5 rounded-lg bg-[#2f6bff] px-3 text-[12.5px] font-semibold text-white shadow-[0_0_24px_-6px_rgba(47,107,255,0.8)] transition hover:bg-[#4a7fff] disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/30 disabled:shadow-none"
+                    className="ml-2 flex h-9 items-center gap-1.5 rounded-full bg-[#2ba6ff] px-4 text-[14px] font-medium text-white transition hover:bg-[#55b7ff] disabled:cursor-not-allowed disabled:bg-[#256290] disabled:text-white/55 disabled:hover:bg-[#256290]"
                   >
                     Build now
-                    <ArrowRight className="size-3.5" strokeWidth={2.6} />
+                    <ArrowRight className="size-4" strokeWidth={2.6} />
                   </button>
                 </div>
               </div>
             </form>
 
-            <div className="mt-6 flex flex-wrap items-start justify-center gap-2.5">
+            <div className="mt-10 flex flex-wrap items-start justify-center gap-5">
               {MODES.map((m) => {
                 const Icon = m.icon;
                 const active = mode === m.id;
@@ -306,53 +315,47 @@ export default function Home({
                       setMode(m.id);
                       taRef.current?.focus();
                     }}
-                    className={cn(
-                      "flex w-[78px] flex-col items-center gap-2 rounded-xl px-2 py-3 text-[12px] transition sm:w-[84px]",
-                      active ? "bg-white/[0.08] text-white" : "text-white/60 hover:bg-white/[0.05] hover:text-white",
-                    )}
+                    className="group flex w-16 flex-col items-center gap-2.5 text-[12px] font-medium transition"
                   >
                     <span
                       className={cn(
-                        "grid size-11 place-items-center rounded-lg border transition",
+                        "grid h-[62px] w-16 place-items-center rounded-[10px] border transition",
                         active
-                          ? "border-white/25 bg-white/10 text-white"
-                          : "border-white/10 bg-white/[0.03] text-white/65",
+                          ? "border-white/20 bg-white/[0.055] text-white"
+                          : "border-white/10 bg-white/[0.02] text-white/80 group-hover:border-white/20 group-hover:bg-white/[0.045]",
                       )}
                     >
-                      <Icon className="size-[19px]" strokeWidth={1.7} />
+                      <Icon className="size-6" strokeWidth={1.6} />
                     </span>
-                    {m.label}
+                    <span className="leading-4 text-[#cfcfd7]">{m.label}</span>
                   </button>
                 );
               })}
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-[12.5px] text-white/55">
-              <span className="mr-1 text-white/45">or start from</span>
+            <div className="mt-11 flex flex-wrap items-center justify-center gap-3 text-[14px] text-[#cfcfd7]">
+              <span className="mr-1 text-[14px] font-normal">or start from</span>
               {[
-                { icon: PenTool, label: "Figma" },
-                { icon: GitBranch, label: "GitHub" },
-                { icon: Users, label: "Team template" },
+                { icon: FigmaMark, label: "Figma" },
+                { icon: GitHubMark, label: "GitHub" },
+                { icon: LayoutTemplate, label: "Team template" },
               ].map((c) => (
                 <button
                   key={c.label}
                   onClick={() => onToast(`${c.label} import — demo only`)}
-                  className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 transition hover:border-white/25 hover:bg-white/[0.07] hover:text-white"
+                  className="flex h-7 items-center gap-1.5 rounded-full border border-[rgba(150,190,255,0.16)] bg-[rgba(16,20,28,0.55)] px-2 text-[14px] font-medium text-[#cfcfd7] transition hover:border-white/25 hover:bg-white/[0.06] hover:text-white"
                 >
                   <c.icon className="size-3.5" />
                   {c.label}
                 </button>
               ))}
             </div>
-            <p className="mt-5 text-[11px] text-white/35">
-              Active mode: <span className="text-white/65">{activeMode.label}</span> · {activeMode.hint}
-            </p>
           </motion.div>
         </div>
       </section>
 
       {/* trusted by */}
-      <section className="mx-auto max-w-6xl px-5 pb-10 pt-12">
+      <section className="mx-auto max-w-6xl px-5 pb-10 pt-[236px]">
         <p className="text-center text-[11px] uppercase tracking-[0.18em] text-white/30">Trusted by teams at</p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-x-9 gap-y-4">
           {LOGOS.map((l) => (

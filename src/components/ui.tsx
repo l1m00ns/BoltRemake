@@ -40,14 +40,7 @@ export function BoltMark({ size = 30, className = "" }: { size?: number; classNa
 }
 
 export function Wordmark({ className = "" }: { className?: string }) {
-  return (
-    <span className={cn("flex items-center gap-2.5", className)}>
-      <BoltMark />
-      <span className="text-[17px] font-semibold tracking-[-0.02em] text-white">
-        bolt<span className="text-white/45">.new</span>
-      </span>
-    </span>
-  );
+  return <img src="/bolt-wordmark.svg" alt="bolt.new" className={cn("h-5 w-auto", className)} />;
 }
 
 export function IconButton({
